@@ -2,6 +2,8 @@
 
 require 'active_support/core_ext/integer/time'
 
+Rails.application.routes.default_url_options = { host: ENV.fetch('HOST'), port: ENV.fetch('PORT') }
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -39,6 +41,9 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
+
+  # define default url options in environment files
+  config.action_mailer.default_url_options = { host: ENV.fetch('HOST'), port: ENV.fetch('PORT') }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
