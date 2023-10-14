@@ -1,4 +1,6 @@
 class Api::V1::RepliesController < ApplicationController
+  before_action :authenticate_devise_api_token!, only: %i[create edit update destory]
+
   def index
     @replies = Reply.all
     render json: ReplySerializer.new(@replies).serializable_hash[:data], status: :ok

@@ -1,5 +1,5 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :authenticate_devise_api_token!
+  before_action :authenticate_devise_api_token!, only: %i[create edit update destory]
 
   def index
     @posts = Post.all
