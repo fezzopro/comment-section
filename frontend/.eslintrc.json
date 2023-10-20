@@ -36,6 +36,15 @@
         ]
       }
     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never"
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off"
