@@ -42,7 +42,8 @@
       {
         "js": "never",
         "mjs": "never",
-        "jsx": "never"
+        "jsx": "never",
+        "tsx": "never"
       }
     ],
     "react/react-in-jsx-scope": "off",
