@@ -1,5 +1,5 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 import minus from '../../assets/images/icon-minus.svg';
 import plus from '../../assets/images/icon-plus.svg';
 import reply from '../../assets/images/icon-reply.svg';
@@ -8,7 +8,9 @@ import reply from '../../assets/images/icon-reply.svg';
 import amyrobson from '../../assets/images/avatars/image-amyrobson.png';
 
 const Post = (props) => {
-  const { attributes } = props;
+  // const { attributes } = props;
+  console.log(props);
+
   return (
     <div className="bg-white p-6 rounded-lg flex gap-4">
       <div>
