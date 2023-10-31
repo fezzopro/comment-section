@@ -1,5 +1,7 @@
-FROM ruby:3.3-rc-alpine
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+FROM ruby:3.2
+RUN apt-get update -y  && \
+  apt-get install -y nodejs postgresql-client
+
 WORKDIR /backend
 COPY . .
 COPY Gemfile /backend/Gemfile
