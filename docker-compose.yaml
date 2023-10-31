@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+    working_dir: /backend
+  backend:
+    build: backend
+    image: rails-backend
+    command: bash -c "bundle exec rails s -p 3001 -b '0.0.0.0'"
+    stdin_open: true
+    tty: true
+    ports:
+      - "3001:3001"
+    working_dir: /backend
+    volumes:
+      - ./backend:/backend
+    depends_on:
+      - db
+  frontend:
+    build: frontend
+    image: react-frontend
+    command: sh -c "npm install && npm start"
+    ports:
+      - "4000:4000"
+    working_dir: /frontend
+    volumes:
+      - ./frontend:/frontend
+    environment:
+      POSTGRES_PASSWORD: password
