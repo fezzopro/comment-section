@@ -14,4 +14,4 @@ ENV NODE_ENV development
 EXPOSE 4000
 
 # start app
-CMD ["npm", "run", "dev"] 
+CMD ["npm", "run", "start"] 
