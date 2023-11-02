@@ -1,4 +1,5 @@
 FROM node
+RUN apt-get update -y
 
 WORKDIR /frontend
 COPY package.json .
@@ -7,7 +8,7 @@ COPY package.json .
 COPY package.json ./frontend/package.json
 COPY package-lock.json ./frontend/package-lock.json
 RUN npm install
-RUN npm audit fix
+# RUN npm audit fix
 
 # add app
 COPY . ./
